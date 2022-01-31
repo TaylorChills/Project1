@@ -34,7 +34,7 @@ class Game {
             pusheen.draw();
         })
         this.winner()
-        this.drawScore()
+       // this.drawScore()
         
     }
 
@@ -48,13 +48,21 @@ class Game {
     }
 
     winner() {
-        let winner = []
+        let winnerArr = []
+        let winner
         for (let i = 0; i < this.pusheen.length; i++)
 
             if (this.pusheen[i].x > 500 ) {
-                winner.push(this.pusheen[i])
+                winnerArr.push(this.pusheen[i])
             }
-            console.log(winner)
+            if (winnerArr.length !== 0) {
+                winner = winnerArr[0].name
+                this.ctx.font = "16px Arial";
+                this.ctx.fillStyle = "black";
+                return this.ctx.fillText(`Winner: ${winner}`, 8, 20);
+            }
+
+            
            
         } 
             /* 
@@ -62,13 +70,11 @@ class Game {
             this.ctx.fillStyle = "#0095DD";
             this.ctx.fillText(`Score: ${winner[0]}, 8, 20);
     */
-
+/* 
     drawScore() {
-     
-        this.ctx.font = "16px Arial";
-        this.ctx.fillStyle = "#0095DD";
-        this.ctx.fillText("Score: ${winner}", 8, 20);
+        let winner = this.winner()
+        
     }
 
-   
+    */
 }
