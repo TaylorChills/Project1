@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Horse Race Betting Simulator</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <p>hello world</p>
+    <!--Selector Menu-->
+    <div class="menu">
+        <h1>Pusheen Racing Simulator</h1>
+        <div>
+            <button id="start-button">Start Game</button>
+        </div>
+        <br>
+    <div>
+        <label for="bet-amount">Bet amount:</label>
+        <input action="number" id="bet-amount" name="bet-amount" min="10" max="100" placeholder="$$$" step="100">  
+        <br>
+        <br>  
+        <button id="horse1" class="horse">Horse 1</button>
+        <button id="horse2" class="horse">Horse 2</button>
+        <button id="go-button">Go!</button>
+        
+    </div>
+
+    </div>
+    <div id="game-board">
+        <canvas id="canvas" width="1000" height="600"></canvas>
+    </div>
+    <script type="text/javascript" src="js/horses.js"></script>
+    <script type="text/javascript" src="js/finishline.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

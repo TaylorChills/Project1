@@ -1,0 +1,15 @@
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    width: 25vw;
+    height: 100vh;
+    text-align: center;
+}
+
+#game-board {
+    align-self: center;
+}
