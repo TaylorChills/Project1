@@ -2,7 +2,7 @@
 class FinishLine {
     constructor(game) {
         this.game = game;
-        this.x = 925;
+        this.x = 900;
         this.y = 0;
         this.width = 75;
         this.height = 1000;
