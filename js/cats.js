@@ -12,14 +12,33 @@ class Pusheen {
 
     }
 
-    draw() {
-        this.img.src = '/Pictures/Pusheen-Scooter.png';
+    drawRed() {
+        this.img.src = '/Pictures/red-scoot.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-
-        if (this.x > 500) {
+        if (this.x > 850) {
             return this.game.stop()
         }
-
+    }
+    drawBlue() {
+        this.img.src = '/Pictures/blue-scoot.png';
+        this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+        if (this.x > 850) {
+            return this.game.stop()
+        }
+    }
+    drawGreen() {
+        this.img.src = '/Pictures/green-scoot.png';
+        this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+        if (this.x > 850) {
+            return this.game.stop()
+        }
+    }
+    drawPurple() {
+        this.img.src = '/Pictures/purple-scoot.png';
+        this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+        if (this.x > 850) {
+            return this.game.stop()
+        }
     }
 
     speedSelect() {

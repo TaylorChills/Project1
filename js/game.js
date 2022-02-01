@@ -13,17 +13,17 @@ class Game {
         this.intervalId = null;
         //this.winner = null;
         this.pusheen = 
-        [(new Pusheen(this, 1, 50, 150, 150, '1')),
-         (new Pusheen(this, 1, 150, 150, 150, '2')),
-         (new Pusheen(this, 1, 250, 150, 150, '3')),
-         (new Pusheen(this, 1, 350, 150, 150, '4'))] 
+        [(new Pusheen(this, 1, 100, 150, 150, 'Red Scoot')),
+         (new Pusheen(this, 1, 190, 150, 150, 'Blue Scoot')),
+         (new Pusheen(this, 1, 290, 150, 150, 'Green Scoot')),
+         (new Pusheen(this, 1, 380, 150, 150, 'Purple Scoot'))] 
         
     }
 
     start() {
         this.intervalId = setInterval(() => {
            this.update(); 
-        }, 1000 / 90);
+        }, 1000 / 120);
     }
 
     update() {
@@ -31,8 +31,11 @@ class Game {
         this.finishLine.draw();
         this.pusheen.forEach((pusheen) => {
             pusheen.speed();
-            pusheen.draw();
         })
+        this.pusheen[0].drawRed();
+        this.pusheen[1].drawBlue();
+        this.pusheen[2].drawGreen();
+        this.pusheen[3].drawPurple();
         this.winner()
        // this.drawScore()
         
@@ -40,7 +43,7 @@ class Game {
 
     drawBackground() {
         this.background.src = '/Pictures/Road.png';
-        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasLength)
+        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, 700)
     }
 
     stop() {
@@ -52,29 +55,19 @@ class Game {
         let winner
         for (let i = 0; i < this.pusheen.length; i++)
 
-            if (this.pusheen[i].x > 500 ) {
+            if (this.pusheen[i].x > 850 ) {
                 winnerArr.push(this.pusheen[i])
             }
             if (winnerArr.length !== 0) {
                 winner = winnerArr[0].name
-                this.ctx.font = "16px Arial";
+                this.ctx.textAlign = 'center'
+                this.ctx.font = "900 30px Courier New";
                 this.ctx.fillStyle = "black";
-                return this.ctx.fillText(`Winner: ${winner}`, 8, 20);
+                console.log(winnerArr)
+                return this.ctx.fillText(`${winner} Won The Race!`, 500, 75 );
             }
 
             
            
         } 
-            /* 
-            this.ctx.font = "16px Arial";
-            this.ctx.fillStyle = "#0095DD";
-            this.ctx.fillText(`Score: ${winner[0]}, 8, 20);
-    */
-/* 
-    drawScore() {
-        let winner = this.winner()
-        
-    }
-
-    */
 }
