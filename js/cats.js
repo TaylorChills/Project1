@@ -13,28 +13,28 @@ class Pusheen {
     }
 
     drawRed() {
-        this.img.src = '/Pictures/red-scoot.png';
+        this.img.src = '/Pictures/Test bikes/badass.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 850) {
             return this.game.stop()
         }
     }
     drawBlue() {
-        this.img.src = '/Pictures/blue-scoot.png';
+        this.img.src = '/Pictures/Test bikes/fancy.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 850) {
             return this.game.stop()
         }
     }
     drawGreen() {
-        this.img.src = '/Pictures/green-scoot.png';
+        this.img.src = '/Pictures/Test bikes/compa.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 850) {
             return this.game.stop()
         }
     }
     drawPurple() {
-        this.img.src = '/Pictures/purple-scoot.png';
+        this.img.src = '/Pictures/Test bikes/hungry.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 850) {
             return this.game.stop()
@@ -42,7 +42,7 @@ class Pusheen {
     }
 
     speedSelect() {
-        let speeds = [1, 0.25, 2, 0.25, 1, 3, 0.25, 2, 0.25, 0.25, 1, 4, 0.25]
+        let speeds = [1, 0.25, 2, 0.25, 1, 3, 0.25, 2, 0.25, 0.25, .25, 4, 0.25, 4, 1, 0.25, 0.50]
 
         return speeds[Math.floor(Math.random() * speeds.length)];
     }

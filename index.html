@@ -10,38 +10,48 @@
 <body>
     <!--Selector Menu-->
     <div class="menu">
-        <h1>Pusheen Racing Simulator</h1>
+        <h1>Need for Pusheen</h1>
         <div>
-            <button onClick="window.location.reload();" id="start">Start Game</button>
+            <button onClick="window.location.reload();" id="start">New Game</button>
         </div>
+
         <br>
-        <div>
-
-        </div>
 
         <div>
-            
-        
             <div >
                 <form class="selector">
-                    <h2>You have <span id="funds">100</span> Bitcoins</h2><br>
+                    <h2>You have: <span id="funds">100</span> Bitcoins</h2><br>
+                    <div class="bet-select">
+                        <label for="bet-amount">Bet amount:</label>
+                        <input type="number" id="bet-amount" name="bet-amount" min="1" max="100" step="100" >
 
-                    <label for="bet-amount">Bet amount:</label>
-                    <input type="number" id="bet-amount" name="bet-amount" min="1" max="100" step="100" >
+                        <select id="Racers">
+                            <option value="Red Scoot">Red Scoot</option>
+                            <option value="Blue Scoot">Blue Scoot</option>
+                            <option value="Green Scoot">Green Scoot</option>
+                            <option value="Purple Scoot">Purple Scoot</option>  
+                        </select>
+                </div>
+                </form> 
+                
+                <br>
 
-                    <select id="Racers">
-                        <option value="Red Scoot">Red Scoot</option>
-                        <option value="Blue Scoot">Blue Scoot</option>
-                        <option value="Green Scoot">Green Scoot</option>
-                        <option value="Purple Scoot">Purple Scoot</option>  
-                    </select>
-                </form> <br>
                 <button type="button" id="go-button">Go!</button>
             </div>
         </div>
     </div>
+    <div>
+        <div></div>
+    </div>
     <div id="game-board">
-        <canvas id="canvas" width="1000" height="600"></canvas>
+        <div id="gif">
+            <div><img src="/Pictures/Gifs/badboy.gif"></div>
+            <div><img src="/Pictures/Gifs/fancypants.gif"></div>
+            <div><img src="/Pictures/Gifs/sushi.gif"></div>
+            <div class="taco"><img src="/Pictures/Gifs/taco.gif"></div>
+        </div>
+        <canvas id="canvas" width="1000" height="700"></canvas>
+        
     </div>
     <script type="text/javascript" src="js/cats.js"></script>
     <script type="text/javascript" src="js/finishline.js"></script>
