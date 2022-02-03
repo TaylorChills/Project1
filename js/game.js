@@ -1,5 +1,4 @@
 
-
 class Game {
     constructor(index) {
         this.index = index
@@ -23,44 +22,48 @@ class Game {
         this.betAmount = parseInt(document.getElementById('bet-amount').value)
     }
 
+    //Iterates over the update() function and runs everything
     start() {
         this.gameRun = true
         this.intervalId = setInterval(() => {
            this.update(); 
         }, 1000 / 120);
-        
     }
 
+    //Stop function for the Pusheens
+    stop() {
+        clearInterval(this.intervalId)
+    }
+
+
+    //A list of functions in a function for start() to iterate over
     update() {
         this.drawBackground();
         this.finishLine.draw();
-        this.pusheen.forEach((pusheen) => {
-            pusheen.speed();
-        })
         this.pusheen[0].drawRed();
-        this.pusheen[1].drawBlue();
+        /* this.pusheen[1].drawBlue();
         this.pusheen[2].drawGreen();
-        this.pusheen[3].drawPurple();
+        this.pusheen[3].drawPurple(); */
+        this.pusheen.forEach((pusheen) => {pusheen.speed();})
         this.winner()
         this.bet()
         this.checkGameOver()
+        this.buttonLockout()
     }
 
+    //Draws the background
     drawBackground() {
         this.background.src = '/Pictures/game-background.jpg';
         this.ctx.drawImage(this.background, this.x, this.y, 1000, 700)
     }
 
-    stop() {
-        clearInterval(this.intervalId)
-    }
-
+    
+    //Iterates over the array of new Pusheens and pushes the first Pusheen to hit a point in the canvas to this.theWinner while displaying who won
     winner() { 
         this.gameRun = false
         for (let i = 0; i < this.pusheen.length; i++)
-            if (this.pusheen[i].x > 850 ) {
+            if (this.pusheen[i].x > 725) {
                 this.theWinner = this.pusheen[i]
-                //Displays winner name
                 this.ctx.textAlign = 'center'
                 this.ctx.font = "900 30px Courier New";
                 this.ctx.fillStyle = "white";
@@ -68,18 +71,10 @@ class Game {
             }  
     } 
 
-   
-
-
-
+    //Checks if the winner is who you selected. Interacts with the DOM spam element to update the players wallet
     bet() {
         let selected = document.getElementById('Racers').value
-        console.log(selected)
-
-        
-        
         if (this.theWinner) {
-         
             if (this.theWinner.name === selected) {
                 console.log('first')
                 this.funds.innerHTML = parseInt(this.funds.innerHTML) + (this.betAmount * 4);
@@ -88,16 +83,13 @@ class Game {
                 console.log('second')
                 this.funds.innerHTML = parseInt(this.funds.innerHTML) - this.betAmount;
             }
-        }
-        
-        
+        }  
     }
 
+    //Checks if player is out of money. If so you can't press go again.
     checkGameOver() {
         if (this.funds.innerHTML <= 0) {
-            console.log('loser')
             document.getElementById('go-button').disabled = true;
-
 
         this.ctx.textAlign = 'center'
         this.ctx.font = "900 30px Courier New";
@@ -107,12 +99,27 @@ class Game {
         }
     }
 
-
+    //this checks if you don't have money or if you're betting more than you have
     validate() {
         if (this.betAmount > parseInt(this.funds.innerHTML)) {
             return alert('you dont have enough')
-         } else {
+
+         } else if (this.betAmount <= 0) {
+            return alert('please enter an amount')
+
+        } else {
              this.start()
-         }
+        }
+    }
+    
+    //if there is no winner the go button is locked to prevent spamming the start game
+    buttonLockout() {
+        document.getElementById('go-button').disabled = true;
+
+        if (this.theWinner != null) {
+            document.getElementById('go-button').disabled = false;
+        }
+        
+        
     }
 }

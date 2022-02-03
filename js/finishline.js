@@ -10,10 +10,6 @@ class FinishLine {
         this.canvas;
     }
 
-    left() {
-        return this.x;
-    }
-
     draw() {
         this.img.src = '/Pictures/Finish-line.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height)

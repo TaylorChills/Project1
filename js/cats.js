@@ -12,10 +12,11 @@ class Pusheen {
 
     }
 
+    //Each draw function contains the image for each Pusheen. They are referenced to their character in the update() function
     drawRed() {
         this.img.src = '/Pictures/Test bikes/badass.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-        if (this.x > 850) {
+        if (this.x > 725) {
             return this.game.stop()
         }
     }
@@ -41,16 +42,16 @@ class Pusheen {
         }
     }
 
+    //Randomizes an array of x values for the characters
     speedSelect() {
         let speeds = [1, 0.25, 2, 0.25, 1, 3, 0.25, 2, 0.25, 0.25, .25, 4, 0.25, 4, 1, 0.25, 0.50]
 
         return speeds[Math.floor(Math.random() * speeds.length)];
     }
 
+    //Selects randoms speeds from speedSelect() and increments the player x value
     speed() {
         let speeds = this.speedSelect()
-
-        
         return this.x += speeds
     }
 
