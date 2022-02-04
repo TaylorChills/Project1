@@ -12,10 +12,10 @@ class Game {
         this.canvasLength = 800;
         this.intervalId = null;
         this.pusheen = 
-        [(new Pusheen(this, 1, 330, 200, 200, 'Red Scoot')),
-         (new Pusheen(this, 1, 395, 200, 200, 'Blue Scoot')),
-         (new Pusheen(this, 1, 440, 200, 200, 'Green Scoot')),
-         (new Pusheen(this, 1, 500, 200, 200, 'Purple Scoot'))] 
+        [(new Pusheen(this, 1, 330, 200, 200, 'Badboy Pusheen')),
+         (new Pusheen(this, 1, 395, 200, 200, 'Mr. fancy pants')),
+         (new Pusheen(this, 1, 440, 200, 200, 'Senor Tacos')),
+         (new Pusheen(this, 1, 500, 200, 200, 'Sushi Rollin'))] 
         this.theWinner = null
         this.gameRun = null
         this.funds = document.getElementById('funds')
@@ -39,12 +39,12 @@ class Game {
     //A list of functions in a function for start() to iterate over
     update() {
         this.drawBackground();
-        this.finishLine.draw();
         this.pusheen[0].drawRed();
-        /* this.pusheen[1].drawBlue();
+        this.pusheen[1].drawBlue();
         this.pusheen[2].drawGreen();
-        this.pusheen[3].drawPurple(); */
+        this.pusheen[3].drawPurple();
         this.pusheen.forEach((pusheen) => {pusheen.speed();})
+        this.finishLine.draw();
         this.winner()
         this.bet()
         this.checkGameOver()
@@ -62,7 +62,7 @@ class Game {
     winner() { 
         this.gameRun = false
         for (let i = 0; i < this.pusheen.length; i++)
-            if (this.pusheen[i].x > 725) {
+            if (this.pusheen[i].x > 800) {
                 this.theWinner = this.pusheen[i]
                 this.ctx.textAlign = 'center'
                 this.ctx.font = "900 30px Courier New";
@@ -81,7 +81,7 @@ class Game {
 
             }else{
                 console.log('second')
-                this.funds.innerHTML = parseInt(this.funds.innerHTML) - this.betAmount;
+                this.funds.innerHTML = parseInt(this.funds.innerHTML) - (this.betAmount);
             }
         }  
     }
@@ -92,7 +92,7 @@ class Game {
             document.getElementById('go-button').disabled = true;
 
         this.ctx.textAlign = 'center'
-        this.ctx.font = "900 30px Courier New";
+        this.ctx.font = "900 34px Courier New";
         this.ctx.fillStyle = "white";
         this.ctx.fillText('Good job! You lost ALL your money!', 500, 125 );
         

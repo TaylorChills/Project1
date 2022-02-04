@@ -16,35 +16,35 @@ class Pusheen {
     drawRed() {
         this.img.src = '/Pictures/Test bikes/badass.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-        if (this.x > 725) {
+        if (this.x > 800) {
             return this.game.stop()
         }
     }
     drawBlue() {
         this.img.src = '/Pictures/Test bikes/fancy.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-        if (this.x > 850) {
+        if (this.x > 800) {
             return this.game.stop()
         }
     }
     drawGreen() {
         this.img.src = '/Pictures/Test bikes/compa.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-        if (this.x > 850) {
+        if (this.x > 800) {
             return this.game.stop()
         }
     }
     drawPurple() {
         this.img.src = '/Pictures/Test bikes/hungry.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-        if (this.x > 850) {
+        if (this.x > 800) {
             return this.game.stop()
         }
     }
 
     //Randomizes an array of x values for the characters
     speedSelect() {
-        let speeds = [1, 0.25, 2, 0.25, 1, 3, 0.25, 2, 0.25, 0.25, .25, 4, 0.25, 4, 1, 0.25, 0.50]
+        let speeds = [1, 0.25, 2, 0.25, 1, 3, 0.25, 2, 0.25, 0.25, .25, 4, 0.25, 4, 1, 0.25, 0.50, 0.25, 0.5, 6]
 
         return speeds[Math.floor(Math.random() * speeds.length)];
     }
