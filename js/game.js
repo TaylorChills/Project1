@@ -68,6 +68,7 @@ class Game {
                 this.ctx.font = "900 30px Courier New";
                 this.ctx.fillStyle = "white";
                 this.ctx.fillText(`${this.theWinner.name} Won The Race!`, 500, 75 );
+                console.log(this.theWinner)
             }  
     } 
 
@@ -76,11 +77,9 @@ class Game {
         let selected = document.getElementById('Racers').value
         if (this.theWinner) {
             if (this.theWinner.name === selected) {
-                console.log('first')
                 this.funds.innerHTML = parseInt(this.funds.innerHTML) + (this.betAmount * 4);
 
             }else{
-                console.log('second')
                 this.funds.innerHTML = parseInt(this.funds.innerHTML) - (this.betAmount);
             }
         }  

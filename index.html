@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horse Race Betting Simulator</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <!--Selector Menu-->
     <div class="menu">
         
         <div id="logo">
-            <img src="/Pictures/Logo/retro-logo.png">
+            <img src="./Pictures/Logo/retro-logo.png">
         </div>
 
         <div>
@@ -27,21 +27,7 @@
                 <form class="selector">
 
         
-            <div >
-                <form class="selector">
-                    <h2>BET ON 2 RACERS</h2>
-                    <div class="bet-select">
             
-                        <input type="number" class="bet" id="" name="bet-amount" step="5" value="0">
-
-                        <select id="Racers1">
-                            <option value="Badboy Pusheen">Badboy Pusheen</option>
-                            <option value="Senor Tacos">Senor Tacos</option> 
-                        </select>
-                    </div>
-                </form> 
-                <button type="button" id="go-button1">Go!</button>
-            </div>
             <div >
                 <form class="selector">
                     <h2>BET ON 4 RACERS</h2>
@@ -57,10 +43,23 @@
                         </select>
                     </div>
                 </form> 
-                
-                <br>
-
                 <button type="button" id="go-button">Go!</button>
+            </div>
+            <div >
+                <form class="selector">
+                    <h2>BET ON 2 RACERS</h2>
+                    <p>coming soon...</p>
+                    <div class="bet-select">
+            
+                        <input type="number" class="bet" id="" name="bet-amount" step="5" value="0">
+
+                        <select id="Racers1">
+                            <option value="Badboy Pusheen">Badboy Pusheen</option>
+                            <option value="Senor Tacos">Senor Tacos</option> 
+                        </select>
+                    </div>
+                </form> 
+                <button type="button" id="go-button1">Go!</button>
             </div>
         </div>
     </div>
@@ -69,17 +68,17 @@
     </div>
     <div id="game-board">
         <div id="gif">
-            <div><img src="/Pictures/Gifs/badboy.gif"></div>
-            <div><img src="/Pictures/Gifs/fancypants.gif"></div>
-            <div><img src="/Pictures/Gifs/sushi.gif"></div>
-            <div class="taco"><img src="/Pictures/Gifs/taco.gif"></div>
+            <div><img src="./Pictures/Gifs/badboy.gif"></div>
+            <div><img src="./Pictures/Gifs/fancypants.gif"></div>
+            <div><img src="./Pictures/Gifs/sushi.gif"></div>
+            <div class="taco"><img src="./Pictures/Gifs/taco.gif"></div>
         </div>
         <canvas id="canvas" width="1000" height="700"></canvas>
         
     </div>
-    <script type="text/javascript" src="js/cats.js"></script>
-    <script type="text/javascript" src="js/finishline.js"></script>
-    <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="./js/cats.js"></script>
+    <script type="text/javascript" src="./js/finishline.js"></script>
+    <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

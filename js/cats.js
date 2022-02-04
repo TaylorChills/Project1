@@ -14,28 +14,28 @@ class Pusheen {
 
     //Each draw function contains the image for each Pusheen. They are referenced to their character in the update() function
     drawRed() {
-        this.img.src = '/Pictures/Test bikes/badass.png';
+        this.img.src = './Pictures/Test bikes/badass.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 800) {
             return this.game.stop()
         }
     }
     drawBlue() {
-        this.img.src = '/Pictures/Test bikes/fancy.png';
+        this.img.src = './Pictures/Test bikes/fancy.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 800) {
             return this.game.stop()
         }
     }
     drawGreen() {
-        this.img.src = '/Pictures/Test bikes/compa.png';
+        this.img.src = './Pictures/Test bikes/compa.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 800) {
             return this.game.stop()
         }
     }
     drawPurple() {
-        this.img.src = '/Pictures/Test bikes/hungry.png';
+        this.img.src = './Pictures/Test bikes/hungry.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         if (this.x > 800) {
             return this.game.stop()
